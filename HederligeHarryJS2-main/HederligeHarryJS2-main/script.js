@@ -29,13 +29,12 @@ Pris = sätt till vad du vill*/
 const contactButton = document.getElementById("button-contact");
 let emailInput = document.getElementById('input-email')
 const phoneInput = document.getElementById("input-phone");
-
+let swePostalCode = document.getElementById('postal-code')
 contactButton.addEventListener("click", function(event) {
     event.preventDefault();
     let emailValue = emailInput.value;
     console.log("E-post: " + emailValue);
 });
-
 
 let createParagraph = function(text){
     const createP = document.createElement("p");
@@ -46,3 +45,11 @@ let createParagraph = function(text){
 createParagraph(phoneInput.value)
 phoneInput.addEventListener("keyup", () => {createParagraph(phoneInput.value)})
 
+emailInput.addEventListener('change', function()
+{
+    if (emailInput.value.includes('.se')){
+        swePostalCode.style.display = 'block'
+    } else {
+        swePostalCode.style.display = 'none'
+    } 
+})
