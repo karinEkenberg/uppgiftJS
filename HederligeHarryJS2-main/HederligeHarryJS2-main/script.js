@@ -45,21 +45,17 @@ let createParagraph = function(text){
 createParagraph(phoneInput.value)
 phoneInput.addEventListener("keyup", () => {createParagraph(phoneInput.value)})
 
-emailInput.addEventListener('input', function()
-{
+emailInput.addEventListener('input', function() {
     if (emailInput.value.includes('.se')){
         let newDiv = document.createElement('div');
-        newDiv.className = 'postal-code';
-        newDiv.innerText = '';
-
-        let newInput = document.createElement('input')
-        newInput.placeholder = "Swedishpostalcode"
-        newInput.className = 'bx-code'
-        swePostalCode.appendChild(newDiv);
+        newDiv.className = 'contact__form__box';
+        let newInput = document.createElement('input');
+        newInput.placeholder = "Swedish postal code";
+        newInput.className = 'bx-code';
         newDiv.appendChild(newInput);
-        swePostalCode.insertBefore(newInput, swePostalCode.childNodes[0])
-        swePostalCode.style.display = 'block'
+        swePostalCode.parentNode.insertBefore(newDiv, swePostalCode.nextSibling);
+        newDiv.style.display = 'block';
     } else {
-        swePostalCode.style.display = 'block'
+        swePostalCode.nextSibling.style.display = 'none';
     } 
-})
+});
