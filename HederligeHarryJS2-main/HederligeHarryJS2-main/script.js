@@ -94,7 +94,7 @@ const addCars = function(){
 
         let infoDiv = document.createElement('div')
         infoDiv.classList.add('information') 
-        newCarInfoBox.innerHTML += `<p>${cars[i].price}</p>`;
+        newCarInfoBox.innerHTML += `<p></p>`;
         infoDiv.appendChild(newImage)
 
         let infoName = document.createElement('div')
