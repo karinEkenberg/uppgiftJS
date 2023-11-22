@@ -214,4 +214,6 @@ section{
     border-top-right-radius: 30px;
 } 
 
-
+.carImages {
+    width: 350px;
+}
